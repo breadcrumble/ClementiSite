@@ -1,0 +1,49 @@
+
+	<div sticky class="well well-md well-lg">
+<h3>Input Stock Ticker</h3>
+
+<form ng-submit="tickerOnly(stockTicker);">
+<div class="input-group">
+	  <input type="text" ng-model="stockTicker" class="form-control" placeholder="">
+		<span class="input-group-btn">
+
+			<input class="btn btn-primary" type="submit" id="submit" value="GO!" />
+		      <!--   <button class="btn btn-primary" ng-click=".tickerOnly(.stockTicker)" type="button">Go!</button> -->
+		      </span>
+				</div>
+
+
+
+</form>
+
+
+
+
+
+<hr>
+<strong><h4 class="highlight">Fundamental Analysis</h4></strong>
+<strong><a ng-click="scrollTo('st')">Short Term: Momentum</a></strong>
+<ul>
+	<li><a ng-click="scrollTo('sno')">Sales, Net Income, Operating Cashflow</a></li>
+	<li><a ng-click="scrollTo('fgd')">Future Growth Drivers: EPS</a></li>
+</ul>
+
+<strong><a ng-click="scrollTo('mts')">Medium Term: Sustainability</a></strong>
+<ul>
+	<li><a ng-click="scrollTo('sca')">Sustainable Competitive Advantage</a></li>
+	<li><a ng-click="scrollTo('roe')">ROE > 12-15%</a></li>
+	<li><a ng-click="scrollTo('piv')">Price Below Intrinsic Value</a></li>
+</ul>
+<strong><a ng-click="scrollTo('lt')">Long Term: Downside Protection</a></strong>
+<ul>
+	<li><a ng-click="scrollTo('debt')">Conservative Debt</a></li>
+	<li><a ng-click="scrollTo('cf')">Healthy Cash Flow</a></li>
+	<li><a ng-click="scrollTo('insider')">Insiders are Bullish</a></li>
+	<li><a ng-click="scrollTo('risk')">Risks Well Managed</a></li>
+</ul>
+<hr>
+<strong><h4 class="highlight">Technical Analysis</h4></strong>
+<ul>
+	<li>Next Steps</li>
+</ul>
+	</div>

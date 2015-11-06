@@ -1,0 +1,36 @@
+#sectionOne {
+background-image: url("lib/london2.jpg");
+background-size: 100%;
+min-height: 400px;
+}
+
+.center-text {
+  text-align: center;
+}
+
+#jumbotext {
+
+text-align: center;
+vertical-align: middle;
+color: #003049;
+
+text-shadow:
+    1px 1px 0 #fff,
+    /* Simulated effect for Firefox and Opera
+       and nice enhancement for WebKit */
+   -1px -1px 0 #fff,
+    1px -1px 0 #fff,
+   -1px  1px 0 #fff,
+    1px  1px 0 #fff;
+    /*text-shadow: 2px 2px 4px #000000;*/
+}
+
+.highlight {
+color: #F6511D;
+
+}
+
+ul
+{
+    list-style-type: none;
+}

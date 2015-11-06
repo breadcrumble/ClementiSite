@@ -1,0 +1,228 @@
+<div class="well well-md" id="st">
+<h2 class="center-text highlight">{{"Short" + " Term"}} Momentum</h2>
+<hr></hr>
+<h3 id="sno">Sales, Net Income, Operating Cashflow</h3>
+<strong>
+<!-- {{stockObject | json}}
+<hr></hr>
+{{aaplData | json}} --></strong>
+
+<div class="row">
+
+  <div class="col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1 col-xl-10 col-xl-offset-1">
+
+  <div class="panel panel-success">
+  <div class="panel-heading">
+    <h3 class="panel-title">Profits: Sales, Net Income and Operating Cashflow</h3>
+  </div>
+  <div class="panel-body">
+Figures in millions.
+
+<!-- {{newArray | json}} -->
+
+  </div>
+  <table class='table table-striped table-bordered table-hover table-condensed'>
+    <thead>
+      <tr>
+        <th>Data</th>
+            <th ng-bind="stockObject.incomeStatement.years[0]">
+            </th>
+            <th ng-bind="stockObject.incomeStatement.years[2]">
+            </th>
+            <th ng-bind="stockObject.incomeStatement.years[4]">
+            </th>
+            <th ng-bind="stockObject.incomeStatement.years[6]">
+            </th>
+            <th ng-bind="stockObject.incomeStatement.years[8]">
+            </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Sales</td>
+        <td ng-bind="stockObject.incomeStatement.revenue[0]"></td>
+        <td ng-bind="stockObject.incomeStatement.revenue[1]"></td>
+        <td ng-bind="stockObject.incomeStatement.revenue[2]"></td>
+        <td ng-bind="stockObject.incomeStatement.revenue[3]"></td>
+        <td ng-bind="stockObject.incomeStatement.revenue[4]"></td>
+
+      </tr>
+      <tr>
+            <td>Net Income</td>
+            <td ng-bind="stockObject.incomeStatement.netincome[0]"></td>
+            <td ng-bind="stockObject.incomeStatement.netincome[1]"></td>
+            <td ng-bind="stockObject.incomeStatement.netincome[2]"></td>
+            <td ng-bind="stockObject.incomeStatement.netincome[3]"></td>
+            <td ng-bind="stockObject.incomeStatement.netincome[4]"></td>
+          </tr>
+          <tr>
+            <td>
+              Operating Cashflow - Annual
+            </td>
+            <td ng-bind="stockObject.cashflow.ocf[0]"></td>
+            <td ng-bind="stockObject.cashflow.ocf[1]"></td>
+            <td ng-bind="stockObject.cashflow.ocf[2]"></td>
+            <td ng-bind="stockObject.cashflow.ocf[3]"></td>
+            <td ng-bind="stockObject.cashflow.ocf[4]"></td>
+          </tr>
+    </tbody>
+  </table>
+  <div class="panel-footer">
+    <canvas id="line" class="chart chart-line" data="newArray" series="series"
+    labels="labels"></canvas>
+  </div>
+  </div>
+  </div>
+</div>
+<hr></hr>
+<h3 id="fgd">Future Growth Drivers: EPS</h3>
+
+<div class="row">
+  <div class="col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1 col-xl-10 col-xl-offset-1">
+
+  <div class="panel panel-info">
+  <div class="panel-heading">
+    <h3 class="panel-title">Future Growth Drivers</h3>
+  </div>
+  <div class="panel-body">
+  LT Growth Rate/EPS positive for next 5 years Rising Earnings Estimates and EPS revisions (BONUS:>10% Growth rate)
+  </div>
+  <table class='table table-striped table-bordered table-hover table-condensed'>
+        <thead>
+          <tr>
+            <th>Data</th>
+            <th>
+              No. of Est.
+            </th>
+            <th>
+              Mean
+            </th>
+            <th>
+              High
+            </th>
+            <th>
+              Low
+            </th>
+            <th>
+              1 Year Ago
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>LT Growth Rate (%)</td>
+            <td ng-bind="reutersObject.data.ltgrowth[0]"></td>
+            <td ng-bind="reutersObject.data.ltgrowth[1]"></td>
+            <td ng-bind="reutersObject.data.ltgrowth[2]"></td>
+            <td ng-bind="reutersObject.data.ltgrowth[3]"></td>
+            <td ng-bind="reutersObject.data.ltgrowth[4]"></td>
+          </tr>
+        </tbody>
+      </table>
+      <hr>
+        <table class='table table-striped table-bordered table-hover table-condensed'>
+          <thead>
+            <tr>
+              <th>Data</th>
+              <th>
+                Company
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>EPS Next 5 Yr</td>
+              <td ng-bind="reutersObject.data.eps5year[0]"
+                ></td>
+            </tr>
+          </tbody>
+        </table>
+        <hr>
+          <table class='table table-striped table-bordered table-hover table-condensed'>
+            <thead>
+              <tr>
+                <th>Data</th>
+                <th>
+                  Current Q
+                </th>
+                <th>
+                  Next Q
+                </th>
+                <th>
+                  Current Year
+                </th>
+                <th>
+                  Next Year
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  Earnings Estimates
+                </td>
+                <td
+                  ng-repeat="earnings in stockObject.yahooEPS.earningsest">
+                  <span ng-bind="earnings"></span>
+                </td>
+              </tr>
+              <tr>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                  EPS Rev. - Up Last 7 Days
+                </td>
+                <!--
+                              <td ng-repeat="eup7 in stockObject.yahooEPS.epsrevup7">
+                <span ng-bind="eup7"></span>
+                              </td> -->
+                <td ng-bind="stockObject.yahooEPS.epsrevup7[0]"
+                  ></td>
+                <td ng-bind="stockObject.yahooEPS.epsrevup7[1]"
+                  ></td>
+                <td ng-bind="stockObject.yahooEPS.epsrevup7[2]"
+                  ></td>
+                <td ng-bind="stockObject.yahooEPS.epsrevup7[3]"
+                  ></td>
+              </tr>
+              <tr>
+                <td>
+                  EPS Rev. - Up Last 30 Days
+                </td>
+                <td ng-bind="stockObject.yahooEPS.epsrevup30[0]"
+              ></td>
+                <td ng-bind="stockObject.yahooEPS.epsrevup30[1]"
+            ></td>
+                <td ng-bind="stockObject.yahooEPS.epsrevup30[2]"
+            ></td>
+                <td ng-bind="stockObject.yahooEPS.epsrevup30[3]"
+              ></td>
+              </tr>
+              <tr>
+                <td>
+                  EPS Rev. - Down Last 30 Days
+                </td>
+                <td ng-bind="stockObject.yahooEPS.epsdownlast30[0]"
+              ></td>
+                <td ng-bind="stockObject.yahooEPS.epsdownlast30[1]"
+              ></td>
+                <td ng-bind="stockObject.yahooEPS.epsdownlast30[2]"
+              ></td>
+                <td ng-bind="stockObject.yahooEPS.epsdownlast30[3]"
+              ></td>
+              </tr>
+
+            </tbody>
+          </table>
+  <div class="panel-footer">
+
+  </div>
+  </div>
+  <hr></hr>
+  </div>
+</div>
+
+
+
+</div>

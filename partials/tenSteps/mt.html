@@ -1,0 +1,103 @@
+<div class="well well-md" id="mts">
+<h2 class="center-text highlight">Medium Term: Sustainability</h2>
+<hr>
+<h3 id="sca">Sustainable Competitive Advantage</h3>
+
+<div class="row">
+
+
+<div class="col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1 col-xl-10 col-xl-offset-1">
+
+<div class="panel panel-success">
+<div class="panel-heading">
+  <h3 class="panel-title">Sustainable Competitive Advantage</h3>
+</div>
+<div class="panel-body">
+Gross Margins and Net Margins highest in Industry (Higher than industry and sector)
+</div>
+<table class='table table-striped table-bordered table-hover table-condensed'>
+  <thead>
+    <tr>
+
+                <th>Data</th>
+                <th>
+                  Company
+                </th>
+                <th>
+                  Industry
+                </th>
+                <th>
+                  Sector
+                </th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <tr>
+                   <td>Gross Margins</td>
+                   <td
+                     ng-repeat="gm in reutersObject.data.grossmargin">
+                     <span ng-bind="gm"></span>
+                   </td>
+                 </tr>
+                <td>
+                  Net Margins
+                </td>
+                <td
+                  ng-repeat="nm in reutersObject.data.netmargin">
+                  <span ng-bind="nm"></span>
+                </td>
+    </tr>
+
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+<hr>
+<h3 id="roe">ROE > 12-15%</h3>
+
+<div class="row">
+  <div class="col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1 col-xl-10 col-xl-offset-1">
+
+  <div class="panel panel-info">
+  <div class="panel-heading">
+    <h3 class="panel-title">Return on Equity</h3>
+  </div>
+  <div class="panel-body">
+  ROE> 12-15%
+  </div>
+  <table class='table table-striped table-bordered table-hover table-condensed'>
+    <thead>
+               <tr>
+                 <th>Data</th>
+                 <th>
+                   Company
+                 </th>
+                 <th>
+                   Industry
+                 </th>
+                 <th>
+                   Sector
+                 </th>
+               </tr>
+             </thead>
+    <tbody>
+      <tr>
+                  <td>ROE</td>
+                  <td ng-repeat="roe in reutersObject.data.roe">
+                    <span ng-bind="roe"></span>
+                  </td>
+                </tr>
+    </tbody>
+  </table>
+  </div>
+  <hr></hr>
+  </div>
+</div>
+
+
+
+
+</div>
